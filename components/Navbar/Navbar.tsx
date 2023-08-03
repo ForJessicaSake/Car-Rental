@@ -9,6 +9,7 @@ const Navbar = () => {
   const [inputValue, setInputValue] = React.useState("");
   const handleInputChange = () => {
     setInputValue(inputRef.current?.value || "");
+
   };
 
   return (
@@ -18,8 +19,8 @@ const Navbar = () => {
         <div className="relative  hidden lg:block">
           <input
             ref={inputRef}
-            onChange={handleInputChange}
             placeholder="Search something here"
+            onChange={handleInputChange}
             className={`${
               inputValue ? "px-3" : "px-10"
             } h-11 p-3  placeholder:text-lg rounded-lg my-5 lg:my-0 w-[480px] border border-gray-100`}
