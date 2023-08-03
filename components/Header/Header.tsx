@@ -5,9 +5,9 @@ import Pick from "../Micro/cards/Pick";
 
 const Header = () => {
   return (
-    <header className="mx-auto container lg:py-7 px-5 lg:px-10">
+    <header className="mx-auto container lg:pt-7 px-5 lg:px-10">
       <div className="flex justify-between space-x-5 ">
-        <div className=" lg:w-[640px] w-full bg-cover bg-[url('/assets/header/ads.svg')]  h-min rounded-lg">
+        <div className=" lg:w-[640px] w-full bg-cover bg-[url('/assets/header/ads.svg')] h-min rounded-lg">
           <div className="p-5 w-full">
             <h1 className="sm:text-3xl text-xl lg:max-w-[250px] font-medium text-white">
               The Best Platform for Car Rental

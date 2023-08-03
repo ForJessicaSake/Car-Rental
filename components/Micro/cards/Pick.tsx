@@ -19,19 +19,19 @@ const Pick = ({ one, two, three, heading }: Props) => {
         <div className="border-r px-6">
           <h4 className="px-1 font-semibold sm:text-lg">{one}</h4>
           <select className="text-text text-xs sm:text-sm">
-            <option>Select your city</option>
+            <option>Select city</option>
           </select>
         </div>
         <div className="border-r px-3">
           <h4 className="px-1 font-semibold sm:text-lg">{two}</h4>
           <select className="text-text text-xs sm:text-sm">
-            <option>Select your city</option>
+            <option>Select date</option>
           </select>
         </div>
         <div className="px-3">
           <h4 className="px-1 font-semibold sm:text-lg">{three}</h4>
           <select className="text-text text-xs sm:text-sm">
-            <option>Select your city</option>
+            <option>Select time</option>
           </select>
         </div>
       </div>
