@@ -14,8 +14,6 @@ type PaystackProps = {
 };
 
 const Payment = ({ item }: any) => {
-  const [isChecked, setIsChecked] = React.useState(false);
-
   const config: PaystackProps = {
     reference: new Date().getTime().toString(),
     email: "Morent@gmail.com",
@@ -31,12 +29,7 @@ const Payment = ({ item }: any) => {
   const onClose = () => {
     toast.error("Your rental has been cancelled, please try again");
   };
-  const handleRadioClick = () => {
-    setIsChecked(!isChecked);
-    if (isChecked === true) {
-      initializePayment(onSuccess, onClose);
-    }
-  };
+
   const tax = 5;
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -48,7 +41,7 @@ const Payment = ({ item }: any) => {
     <main className="mx-auto container py-7 px-5 lg:px-10 flex lg:flex-row flex-col-reverse justify-between lg:space-x-5">
       <form className="lg:w-7/12" onSubmit={handleSubmit}>
         <div className=" bg-white rounded-xl p-5 lg:my-0 my-7">
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between">
             <div>
               <h3 className="text-lg font-bold">Billings Info</h3>
               <p className="py-1">Please enter your billing info</p>
@@ -93,7 +86,7 @@ const Payment = ({ item }: any) => {
         </div>
 
         <div className=" bg-white p-5 my-8 rounded-xl">
-          <div className="flex justify-between  items-center">
+          <div className="flex justify-between">
             <div>
               <h3 className="text-lg font-bold">Rental Info</h3>
               <p className="py-1">Please select your rental date</p>
@@ -193,7 +186,7 @@ const Payment = ({ item }: any) => {
         </div>
 
         <div className=" bg-white p-5 rounded-xl">
-          <div className="flex justify-between  items-center">
+          <div className="flex justify-between">
             <div>
               <h3 className="text-lg font-bold">Payment Method</h3>
               <p className="py-1">Select your payment method</p>
@@ -254,7 +247,11 @@ const Payment = ({ item }: any) => {
               <label className="flex items-center font-medium  ">
                 <input
                   type="checkbox"
-                  onChange={handleRadioClick}
+                  onChange={(e) => {
+                    e.target.checked
+                      ? initializePayment(onSuccess, onClose)
+                      : null;
+                  }}
                   className="my-3 rounded-lg bg-input w-5 h-5 mr-3"
                 />
                 Paystack
@@ -271,12 +268,11 @@ const Payment = ({ item }: any) => {
         </div>
 
         <div className=" bg-white p-5 my-8 rounded-xl">
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between">
             <div>
               <h3 className="text-lg font-bold">Confirmation</h3>
-              <p className="py-1 max-w-[230px] sm:max-w-[300px]">
-                We are getting to the end. Just few clicks and your rental is
-                ready!
+              <p className="py-1 max-w-[180px] sm:max-w-[300px]">
+                Few clicks and your rental is ready!
               </p>
             </div>
             <p className="text-text">Step 4 of 4</p>
