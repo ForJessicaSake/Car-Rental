@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import Supabase from "@/components/Supabase/Supabase";
 import Details from "@/components/Details/Details";
 
-const index = () => {
+const Index = () => {
   const router = useRouter();
   const id = router.query?.id;
   const [item, setItem] = React.useState<any | null>(null);
@@ -29,4 +29,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;
