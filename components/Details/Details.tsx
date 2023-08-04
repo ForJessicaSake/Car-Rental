@@ -4,6 +4,7 @@ import Button from "../Micro/button/Button";
 import Item from "../Micro/cards/Item";
 import PopularCars from "../Micro/cards/PopularCars";
 import Reviews from "../Reviews/Reviews";
+import Link from "next/link";
 
 const Details = ({ item }: any) => {
   return (
@@ -98,11 +99,15 @@ const Details = ({ item }: any) => {
                   ${item?.price}.00/
                   <span className="font-medium text-lg text-text">day</span>
                 </p>
-                <Button className="bg-primary rounded-md w-36">Pay Now</Button>
+                <Link href={`/details/${item?.id}/payment`}>
+                  <Button className="bg-primary rounded-md w-36">
+                    Pay Now
+                  </Button>
+                </Link>
               </div>
             </section>
           </div>
-
+          
           <section>
             <Reviews />
           </section>
