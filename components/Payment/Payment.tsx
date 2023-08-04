@@ -230,7 +230,6 @@ const Payment = ({ item }: any) => {
                 className="rounded-full"
               />
             </div>
-       
           </div>
         </div>
 
@@ -276,60 +275,62 @@ const Payment = ({ item }: any) => {
         </div>
       </form>
 
-      <section className="lg:w-5/12 h-fit p-5 rounded-xl bg-white">
-        <div>
-          <h3 className="text-xl font-semibold">Rental Summary</h3>
-          <p className="text-text py-2 sm:text-base text-sm">
-            Prices are based on daily rentals; extended rental beyond a day is
-            exclusive to existing customers.
-          </p>
-        </div>
-        <div className="flex justify-between py-5">
-          <img
-            src={item?.image}
-            alt="car"
-            className="rounded-md bg-[url('/assets/header/ads2.svg')] px-3 border-primary w-[190px] h-[100px] sm:w-[210px] sm:h-[124px]"
-          />
+      {item && (
+        <section className="lg:w-5/12 h-fit p-5 rounded-xl bg-white">
           <div>
-            <h3 className="sm:text-3xl text-xl font-bold">{item?.name}</h3>
-            <div className="flex items-center">
-              <img
-                src="/assets/details/Review.svg"
-                alt="review"
-                className="rounded-md my-5"
-              />
-              <p className="pl-2 sm:block hidden text-text">440+ Reviewer</p>
-            </div>
-          </div>
-        </div>
-        <hr className="my-5" />
-        <div className="">
-          <div className="flex justify-between text-l">
-            <p className=" text-text">Subtotal(1 day)</p>
-            <p className="font-bold">${item?.price}.00</p>
-          </div>
-          <div className="flex justify-between text-lg py-5">
-            <p className="text-text">Tax</p>
-            <p className="font-bold">${tax}.00</p>
-          </div>
-          <div
-            className="flex justify-between text-lg my-5 bg-input
-           rounded-xl p-6"
-          >
-            <p className="text-text">Apply promo code</p>
-            <p className="text-black font-medium text-lg">Apply now</p>
+            <h3 className="text-xl font-semibold">Rental Summary</h3>
+            <p className="text-text py-2 sm:text-base text-sm">
+              Prices are based on daily rentals; extended rental beyond a day is
+              exclusive to existing customers.
+            </p>
           </div>
           <div className="flex justify-between py-5">
+            <img
+              src={item?.image}
+              alt="car"
+              className="rounded-md bg-[url('/assets/header/ads2.svg')] px-3 border-primary w-[190px] h-[100px] sm:w-[210px] sm:h-[124px]"
+            />
             <div>
-              <p className="text-xl font-semibold">Total Rental Price</p>
-              <p className="text-text sm:text-base text-xs">
-                Overall price and includes rental tax
-              </p>
+              <h3 className="sm:text-3xl text-xl font-bold">{item?.name}</h3>
+              <div className="flex items-center">
+                <img
+                  src="/assets/details/Review.svg"
+                  alt="review"
+                  className="rounded-md my-5"
+                />
+                <p className="pl-2 sm:block hidden text-text">440+ Reviewer</p>
+              </div>
             </div>
-            <p className="text-2xl font-bold">${item?.price + tax}</p>
           </div>
-        </div>
-      </section>
+          <hr className="my-5" />
+          <div className="">
+            <div className="flex justify-between text-l">
+              <p className=" text-text">Subtotal(1 day)</p>
+              <p className="font-bold">${item?.price}.00</p>
+            </div>
+            <div className="flex justify-between text-lg py-5">
+              <p className="text-text">Tax</p>
+              <p className="font-bold">${tax}.00</p>
+            </div>
+            <div
+              className="flex justify-between text-lg my-5 bg-input
+           rounded-xl p-6"
+            >
+              <p className="text-text">Apply promo code</p>
+              <p className="text-black font-medium text-lg">Apply now</p>
+            </div>
+            <div className="flex justify-between py-5">
+              <div>
+                <p className="text-xl font-semibold">Total Rental Price</p>
+                <p className="text-text sm:text-base text-xs">
+                  Overall price and includes rental tax
+                </p>
+              </div>
+              <p className="text-2xl font-bold">${item?.price + tax}</p>
+            </div>
+          </div>
+        </section>
+      )}
     </main>
   );
 };
