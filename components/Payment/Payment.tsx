@@ -3,12 +3,50 @@ import { AiOutlineSafety } from "react-icons/ai";
 import { FaRegDotCircle } from "react-icons/fa";
 import Button from "../Micro/button/Button";
 import Image from "next/image";
+import { toast } from "react-toastify";
+import { usePaystackPayment } from "react-paystack";
+
+type PaystackProps = {
+  reference: string;
+  email: string;
+  amount: number;
+  publicKey: string | any;
+};
 
 const Payment = ({ item }: any) => {
+  const [isChecked, setIsChecked] = React.useState(false);
+
+  const config: PaystackProps = {
+    reference: new Date().getTime().toString(),
+    email: "Morent@gmail.com",
+    amount: item?.price * 80000,
+    publicKey: process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY,
+  };
+
+  const initializePayment = usePaystackPayment(config);
+  const onSuccess = () => {
+    toast.error("Your rental has been successfully booked 🎉");
+  };
+
+  const onClose = () => {
+    toast.error("Your rental has been cancelled, please try again");
+  };
+  const handleRadioClick = () => {
+    setIsChecked(!isChecked);
+    if (isChecked === true) {
+      initializePayment(onSuccess, onClose);
+    }
+  };
   const tax = 5;
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setTimeout(() => {
+      toast.success("Your rental has been successfully booked 🎉");
+    }, 1000);
+  };
   return (
     <main className="mx-auto container py-7 px-5 lg:px-10 flex lg:flex-row flex-col-reverse justify-between lg:space-x-5">
-      <form className="lg:w-7/12 ">
+      <form className="lg:w-7/12" onSubmit={handleSubmit}>
         <div className=" bg-white rounded-xl p-5 lg:my-0 my-7">
           <div className="flex justify-between items-center">
             <div>
@@ -215,8 +253,8 @@ const Payment = ({ item }: any) => {
             <div className="bg-input py-4 px-4 rounded-xl flex justify-between">
               <label className="flex items-center font-medium  ">
                 <input
-                  type="radio"
-                  required
+                  type="checkbox"
+                  onChange={handleRadioClick}
                   className="my-3 rounded-lg bg-input w-5 h-5 mr-3"
                 />
                 Paystack
@@ -250,8 +288,7 @@ const Payment = ({ item }: any) => {
                 required
                 className="my-3 rounded-lg bg-input lg:w-5 lg:h-5 w-8 h-8 mr-3"
               />
-              I agree with receiving newsletter emails. No spam,
-              promised!
+              I agree with receiving newsletter emails. No spam, promised!
             </label>
             <label className="flex items-center font-medium bg-input py-2 px-4 rounded-xl">
               <input
@@ -324,7 +361,9 @@ const Payment = ({ item }: any) => {
                   Overall price and includes rental tax
                 </p>
               </div>
-              <p className="text-2xl font-bold sm:py-0 py-2">${item?.price + tax}</p>
+              <p className="text-2xl font-bold sm:py-0 py-2">
+                ${item?.price + tax}
+              </p>
             </div>
           </div>
         </section>
