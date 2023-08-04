@@ -5,7 +5,7 @@ type Props = {
 };
 
 const Button = ({ className, children, disabled }: Props) => {
-  return <button className={` ${className} h-11 rounded-lg text-white font-medium sm:w-28 w-24` }>{children}</button>;
+  return <button className={` ${className} h-11 rounded-lg text-white font-medium w-24` }>{children}</button>;
 };
 
 export default Button;

@@ -1,64 +1,87 @@
 import React from "react";
 import Button from "../button/Button";
 import Image from "next/image";
-import {
-  BsFuelPumpDieselFill,
-  BsFillPeopleFill,
-  BsFillBookFill,
-} from "react-icons/bs";
+import { BsFuelPumpDieselFill, BsFillPeopleFill } from "react-icons/bs";
 import { GiSteeringWheel } from "react-icons/gi";
-import {GrFavorite} from "react-icons/gr"
+import { GrFavorite } from "react-icons/gr";
+import Supabase from "@/components/Supabase/Supabase";
+import { toast } from "react-toastify";
+import Link from "next/link";
 
 const Item = () => {
+  const [cars, setCars] = React.useState<null | any>(null);
+  React.useEffect(() => {
+    const fetchCars = async () => {
+      const { data, error } = await Supabase.from("cars").select();
+      if (error) {
+        console.log(error);
+      }
+      setCars(data);
+    };
+    fetchCars();
+  }, []);
+
   return (
-    <div className="rounded-lg p-4 bg-white">
-      <div>
-        <div className="flex justify-between">
-          <hgroup>
-            <h3 className="text-lg font-bold">MG ZX Excite</h3>
-            <h4 className="font-medium text-lg lg:text-base text-text">Sports</h4>
-          </hgroup>
-          <p><GrFavorite className="text-lg text-text"/></p>
-        </div>
-        <Image
-          src="/assets/header/car1.svg"
-          alt="car"
-          width={270}
-          height={108}
-          className="my-12"
-        />
-      </div>
-      <div>
-        <ul className="flex justify-between text-text text-base">
-          <li className="flex items-center">
-            <span className="pr-2 text-lg">
-              <BsFuelPumpDieselFill />
-            </span>
-            90L
-          </li>
-          <li className="flex items-center">
-            <span className="pr-2 text-lg">
-              <GiSteeringWheel />
-            </span>
-            Manual
-          </li>
-          <li className="flex items-center">
-            <span className="pr-2 text-lg">
-              <BsFillPeopleFill />
-            </span>
-            People
-          </li>
-        </ul>
-        <div className="flex pt-5 justify-between">
-          <p className="text-base font-medium text-text">
-            <span className="text-black font-bold text-lg">$74.00/</span>day
-          </p>
-          <Button className="bg-primary w-24 ml-16 lg:ml-5 xl:ml-0 text-sm text-white font-medium">
-            Rent Now
-          </Button>
-        </div>
-      </div>
-    </div>
+    <>
+      {cars &&
+        cars.map((car: { [key: string]: string }) => (
+          <div className="rounded-lg p-4 bg-white " key={car.id}>
+            <div>
+              <div className="flex justify-between">
+                <hgroup>
+                  <h3 className="text-base font-bold">{car.name}</h3>
+                  <h4 className="font-medium text-lg lg:text-base text-text">
+                    {car.type}
+                  </h4>
+                </hgroup>
+                <p>
+                  <GrFavorite className="text-lg text-text" />
+                </p>
+              </div>
+              <img
+                src={car.image}
+                alt="car"
+                className="my-12 w-[270px] h-[108px]"
+              />
+            </div>
+            <div>
+              <ul className="flex justify-between text-text text-sm">
+                <li className="flex items-center">
+                  <span className="pr-2 text-base">
+                    <BsFuelPumpDieselFill />
+                  </span>
+                  {car.tank}L
+                </li>
+                <li className="flex items-center">
+                  <span className="pr-2 text-base">
+                    <GiSteeringWheel />
+                  </span>
+                  Manual
+                </li>
+                <li className="flex items-center">
+                  <span className="pr-2 text-base">
+                    <BsFillPeopleFill />
+                  </span>
+                  {car.people}
+                </li>
+              </ul>
+              <div className="flex pt-5 justify-between">
+                <p className="text-base font-medium text-text">
+                  <span className="text-black font-bold text-base">
+                    ${car.price}.00/
+                  </span>
+                  day
+                </p>
+                <Link href={`/details/${car.id}`}>
+                  <Button className="bg-primary w-24 ml-16 lg:ml-5 xl:ml-0 text-sm text-white font-medium">
+                    Rent Now
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        ))}
+    </>
   );
 };
 

@@ -1,6 +1,5 @@
 import React from "react";
-import Item from "../Micro/cards/Item";
-
+import PopularCars from "../Micro/cards/PopularCars";
 const Popular = () => {
   return (
     <main className="mx-auto container px-5 lg:px-10 w-full">
@@ -9,10 +8,7 @@ const Popular = () => {
         <p className="text-primary">View All</p>
       </nav>
       <div className="lg:grid grid-cols-4 flex space-x-5 xl:overflow-hidden overflow-x-auto">
-        <Item />
-        <Item />
-        <Item />
-        <Item />
+        <PopularCars/>
       </div>
     </main>
   );
