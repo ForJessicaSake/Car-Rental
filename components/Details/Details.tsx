@@ -52,7 +52,7 @@ const Details = ({ item }: any) => {
               </div>
             </section>
 
-            <section className="lg:w-5/12 h-[508px] p-5 bg-white rounded-xl flex flex-col justify-between">
+            <section className="lg:w-5/12 h-fit p-5 bg-white rounded-xl flex flex-col justify-between">
               <div>
                 <h3 className="text-3xl font-bold">{item?.name}</h3>
                 <img
@@ -94,12 +94,12 @@ const Details = ({ item }: any) => {
                 </div>
               </div>
 
-              <div className="flex justify-between">
-                <p className="text-2xl font-bold">
+              <div className="flex sm:flex-row flex-col justify-between">
+                <p className="text-xl font-bold">
                   ${item?.price}.00/
                   <span className="font-medium text-lg text-text">day</span>
                 </p>
-                <Link href={`/details/${item?.id}/payment`}>
+                <Link href={`/details/${item?.id}/payment`} className="my-5 sm:my-0">
                   <Button className="bg-primary rounded-md w-36">
                     Pay Now
                   </Button>
@@ -108,7 +108,7 @@ const Details = ({ item }: any) => {
             </section>
           </div>
           
-          <section>
+          <section className="">
             <Reviews />
           </section>
 
