@@ -73,7 +73,7 @@ const Item = () => {
                   day
                 </p>
                 <Link href={`/details/${car.id}`}>
-                  <Button className="bg-primary w-24 ml-16 lg:ml-5 xl:ml-0 text-sm text-white font-medium">
+                  <Button className="bg-primary w-20 ml-14 lg:ml-5 xl:ml-0 text-sm text-white font-medium">
                     Rent Now
                   </Button>
                 </Link>

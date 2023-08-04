@@ -17,7 +17,7 @@ const Payment = ({ item }: any) => {
             </div>
             <p className="text-text">Step 1 of 4</p>
           </div>
-          <div className="grid grid-cols-2 gap-x-7 gap-y-3 py-5">
+          <div className="grid sm:grid-cols-2 sm:gap-x-7 gap-y-3 py-2">
             <label className="flex flex-col font-medium ">
               Name
               <input
@@ -69,7 +69,7 @@ const Payment = ({ item }: any) => {
             </span>
             Pick-Up
           </h3>
-          <div className="grid grid-cols-2 gap-x-7 gap-y-3 py-2">
+          <div className="grid sm:grid-cols-2 sm:gap-x-7 gap-y-3 py-2">
             <label className="flex flex-col font-medium ">
               Locations
               <select
@@ -115,11 +115,10 @@ const Payment = ({ item }: any) => {
             Drop-Off
           </h3>
 
-          <div className="grid grid-cols-2 gap-x-7 gap-y-3 py-2">
+          <div className="grid sm:grid-cols-2 sm:gap-x-7 gap-y-3 py-2">
             <label className="flex flex-col font-medium ">
               Locations
               <select
-                placeholder="Your Location"
                 required
                 className="my-3 rounded-lg font-normal bg-input p-4"
               >
@@ -159,11 +158,11 @@ const Payment = ({ item }: any) => {
           <div className="flex justify-between  items-center">
             <div>
               <h3 className="text-lg font-bold">Payment Method</h3>
-              <p className="py-1">Please enter your payment method</p>
+              <p className="py-1">Select your payment method</p>
             </div>
             <p className="text-text">Step 3 of 4</p>
           </div>
-          <div className="grid grid-cols-2 gap-x-7 gap-y-3 py-5">
+          <div className="grid sm:grid-cols-2 sm:gap-x-7 gap-y-3 py-2">
             <label className="flex flex-col font-medium ">
               Card Number
               <input
@@ -237,7 +236,7 @@ const Payment = ({ item }: any) => {
           <div className="flex justify-between items-center">
             <div>
               <h3 className="text-lg font-bold">Confirmation</h3>
-              <p className="py-1">
+              <p className="py-1 max-w-[230px] sm:max-w-[300px]">
                 We are getting to the end. Just few clicks and your rental is
                 ready!
               </p>
@@ -251,7 +250,7 @@ const Payment = ({ item }: any) => {
                 required
                 className="my-3 rounded-lg bg-input lg:w-5 lg:h-5 w-8 h-8 mr-3"
               />
-              I agree with sending marketing and newsletter emails. No spam,
+              I agree with receiving newsletter emails. No spam,
               promised!
             </label>
             <label className="flex items-center font-medium bg-input py-2 px-4 rounded-xl">
@@ -260,7 +259,7 @@ const Payment = ({ item }: any) => {
                 required
                 className="my-3 rounded-lg bg-input lg:w-5 lg:h-5 w-8 h-8 mr-3"
               />
-              I agree with our terms and conditions and privacy policy.
+              I agree with our terms, conditions and privacy policy.
             </label>
           </div>
           <Button className="bg-primary w-32 h-12">Proceed Now</Button>
@@ -284,14 +283,14 @@ const Payment = ({ item }: any) => {
               exclusive to existing customers.
             </p>
           </div>
-          <div className="flex justify-between py-5">
+          <div className="flex sm:flex-row flex-col-reverse justify-between py-5">
             <img
               src={item?.image}
               alt="car"
               className="rounded-md bg-[url('/assets/header/ads2.svg')] px-3 border-primary w-[190px] h-[100px] sm:w-[210px] sm:h-[124px]"
             />
             <div>
-              <h3 className="sm:text-3xl text-xl font-bold">{item?.name}</h3>
+              <h3 className="sm:text-2xl text-xl font-bold">{item?.name}</h3>
               <div className="flex items-center">
                 <img
                   src="/assets/details/Review.svg"
@@ -313,20 +312,19 @@ const Payment = ({ item }: any) => {
               <p className="font-bold">${tax}.00</p>
             </div>
             <div
-              className="flex justify-between text-lg my-5 bg-input
+              className="text-lg my-5 bg-input
            rounded-xl p-6"
             >
-              <p className="text-text">Apply promo code</p>
-              <p className="text-black font-medium text-lg">Apply now</p>
+              <p className="text-text">Apply for promo code</p>
             </div>
-            <div className="flex justify-between py-5">
+            <div className="flex sm:flex-row flex-col justify-between py-5">
               <div>
                 <p className="text-xl font-semibold">Total Rental Price</p>
                 <p className="text-text sm:text-base text-xs">
                   Overall price and includes rental tax
                 </p>
               </div>
-              <p className="text-2xl font-bold">${item?.price + tax}</p>
+              <p className="text-2xl font-bold sm:py-0 py-2">${item?.price + tax}</p>
             </div>
           </div>
         </section>
