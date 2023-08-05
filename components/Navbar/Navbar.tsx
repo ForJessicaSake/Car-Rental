@@ -77,7 +77,7 @@ const Navbar = () => {
 
 
             <Link href="/dashboard">
-              <Button className="mx-5 w-40 bg-primary text-white rounded-lg">
+              <Button className="mx-5 w-40 bg-secondary text-white rounded-lg">
                 Go to Dashboard
               </Button>
             </Link>
