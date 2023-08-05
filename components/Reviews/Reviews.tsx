@@ -12,12 +12,10 @@ const Reviews = () => {
       <div className="flex justify-between pt-10">
         <div className="space-x-3 flex">
           <div>
-            <Image
+            <img
               src="/assets/navbar/avatar.svg"
               alt=""
-              width={100}
-              height={100}
-              className="cursor-pointer"
+              className="cursor-pointer rounded-full w-96  md:w-32 md:h-32"
             />
           </div>
           <div>
@@ -38,38 +36,35 @@ const Reviews = () => {
             </p>
           </div>
         </div>
-      
       </div>
       <div className="flex justify-between pt-10">
-          <div className="space-x-3 flex">
-            <div>
-              <Image
-                src="/assets/header/woman.jpg"
-                alt=""
-                width={100}
-                height={100}
-                className="cursor-pointer rounded-full"
+        <div className="space-x-3 flex">
+          <div className="md:h-32 md:w-32 w-80 h-80 rounded-full">
+            <img
+              src="/assets/header/woman.jpg"
+              alt=""
+              className="cursor-pointer w-fit rounded-full"
+            />
+          </div>
+          <div>
+            <h2 className="text-xl font-bold">Skylar Dias</h2>
+            <div className="flex sm:flex-row flex-col py-1 sm:items-center justify-between">
+              <h4 className="text-text">CEO at Amazon</h4>
+              <img
+                src="/assets/details/Review.svg"
+                alt="review"
+                className="w-28 my-1 sm:my-0"
               />
             </div>
-            <div>
-              <h2 className="text-xl font-bold">Skylar Dias</h2>
-              <div className="flex sm:flex-row flex-col py-1 sm:items-center justify-between">
-                <h4 className="text-text">CEO at Amazon</h4>
-                <img
-                  src="/assets/details/Review.svg"
-                  alt="review"
-                  className="w-28 my-1 sm:my-0"
-                  />
-              </div>
-              <p className="py-1 leading-8 font-light">
-                We are very happy with the service from the MORENT App. Morent
-                has a low price and also a large variety of cars with good and
-                comfortable facilities. In addition, the service provided by the
-                officers is also very friendly and very polite.
-              </p>
-            </div>
+            <p className="py-1 leading-8 font-light">
+              We are very happy with the service from the MORENT App. Morent has
+              a low price and also a large variety of cars with good and
+              comfortable facilities. In addition, the service provided by the
+              officers is also very friendly and very polite.
+            </p>
           </div>
         </div>
+      </div>
     </div>
   );
 };
