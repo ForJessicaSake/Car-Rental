@@ -30,7 +30,7 @@ const PopularCars = () => {
     <>
       {filterCars &&
         filterCars.map((popularCar: { [key: string]: string }) => (
-          <div className="rounded-lg p-4 bg-white " key={popularCar.id}>
+          <div className="rounded-lg p-4 bg-white" key={popularCar.id} data-aos="fade-in">
             <div>
               <div className="flex justify-between">
                 <hgroup>
@@ -78,7 +78,7 @@ const PopularCars = () => {
                   day
                 </p>
                 <Link href={`/details/${popularCar.id}`}>
-                  <Button className="bg-primary w-20  ml-14 lg:ml-5 xl:ml-0 text-sm text-white font-medium">
+                  <Button className="bg-primary w-20  ml-10 lg:ml-5 xl:ml-10 text-sm text-white font-medium">
                     Rent Now
                   </Button>
                 </Link>

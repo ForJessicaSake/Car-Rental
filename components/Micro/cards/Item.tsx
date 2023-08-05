@@ -25,7 +25,7 @@ const Item = () => {
     <>
       {cars &&
         cars.map((car: { [key: string]: string }) => (
-          <div className="rounded-lg p-4 bg-white " key={car.id}  data-aos="fade-in">
+        <div className="rounded-lg p-4 bg-white " key={car.id} data-aos="fade-in">
             <div>
               <div className="flex justify-between">
                 <hgroup>
@@ -73,7 +73,7 @@ const Item = () => {
                   day
                 </p>
                 <Link href={`/details/${car.id}`}>
-                  <Button className="bg-primary w-20 ml-14 lg:ml-5 xl:ml-0 text-sm text-white font-medium">
+                  <Button className="bg-primary w-20 ml-14 lg:ml-5 xl:ml-10 text-sm text-white font-medium">
                     Rent Now
                   </Button>
                 </Link>

@@ -7,15 +7,18 @@ import { ToastContainer, Slide } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useRouter } from "next/router";
 
 export default function App({ Component, pageProps }: AppProps) {
   React.useLayoutEffect(() => {
     AOS.init({ duration: 1900, once: true });
     AOS.refresh();
   });
+
+  const router = useRouter();
   return (
     <main className="font-font overflow-x-hidden">
-      <Navbar />
+      {router.pathname.includes("dashboard") ? null : <Navbar />}
       <Component {...pageProps} />
       <Footer />
       <ToastContainer
