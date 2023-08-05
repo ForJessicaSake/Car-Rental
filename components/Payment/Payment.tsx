@@ -336,7 +336,7 @@ const Payment = ({ item }: any) => {
           </div>
           <hr className="my-5" />
           <div className="">
-            <div className="flex justify-between text-l">
+            <div className="flex justify-between text-lg">
               <p className=" text-text">Subtotal(1 day)</p>
               <p className="font-bold">${item?.price}.00</p>
             </div>
