@@ -80,9 +80,8 @@ const Tabs = () => {
   }, [CurrentTab]);
 
   const handleLogOut = () => {
-    // Logout();
     setTimeout(() => {
-      toast.info("Bye for now, see you soon!");
+      toast.info("Happy Renting!");
       router.push("/");
     }, 500);
   };
@@ -137,7 +136,7 @@ const Tabs = () => {
             ))}
             <div
               className="flex items-center  text-lg px-2"
-              // onClick={handleLogOut}
+              onClick={handleLogOut}
             >
               <AiOutlineLogout className="mr-2" /> Logout
             </div>

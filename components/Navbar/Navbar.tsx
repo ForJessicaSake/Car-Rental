@@ -32,12 +32,19 @@ const Navbar = () => {
           </ul>
         </div>
         <ul className="flex items-center">
-          <li className="text-text cursor-pointer">
-            <Link href="/">Sign in</Link>
-          </li>
+          {/* 
           <Link href="/">
             <Button className="mx-5 w-32 bg-primary text-white rounded-lg">
               Log in
+            </Button>
+          </Link> */}
+          <li className="text-text cursor-pointer">
+            <Link href="/">Sign in</Link>
+          </li>
+
+          <Link href="/dashboard">
+            <Button className="mx-5 w-40 bg-primary text-white rounded-lg">
+              Go to Dashboard
             </Button>
           </Link>
         </ul>
@@ -69,10 +76,20 @@ const Navbar = () => {
               <Link href="/#footer">Contact Us</Link>
             </li>
             <Link href="/">
-            <Button className="mx-5 w-32 bg-black text-white rounded-lg">
-              Log in
-            </Button>
-          </Link>
+              <Button className="mx-5 w-32 bg-black text-white rounded-lg">
+                Log in
+              </Button>
+            </Link>
+
+            <Link href="/">
+              <li className="text-text cursor-pointer">Sign in </li>
+            </Link>
+
+            <Link href="/dashboard">
+              <Button className="mx-5 w-40 bg-primary text-white rounded-lg">
+                Go to Dashboard
+              </Button>
+            </Link>
           </ul>
         </div>
         <div className="lg:hidden block text-3xl" onClick={() => setNav(!nav)}>
