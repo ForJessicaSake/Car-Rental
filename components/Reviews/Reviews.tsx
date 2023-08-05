@@ -44,10 +44,10 @@ const Reviews = () => {
           <div className="space-x-3 flex">
             <div>
               <Image
-                src="/assets/header/lady.jpg"
+                src="/assets/header/woman.jpg"
                 alt=""
-                width={50}
-                height={50}
+                width={100}
+                height={100}
                 className="cursor-pointer rounded-full"
               />
             </div>
