@@ -100,7 +100,7 @@ const Details = ({ item }: any) => {
                   <span className="font-medium text-lg text-text">day</span>
                 </p>
                 <Link href={`/details/${item?.id}/payment`} className="my-5 sm:my-0">
-                  <Button className="bg-primary rounded-md w-36">
+                  <Button className="animate-bounce bg-primary rounded-md w-36">
                     Pay Now
                   </Button>
                 </Link>

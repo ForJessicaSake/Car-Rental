@@ -57,10 +57,11 @@ const Reviews = () => {
               />
             </div>
             <p className="py-1 leading-8 font-light">
-              We are very happy with the service from the MORENT App. Morent has
-              a low price and also a large variety of cars with good and
-              comfortable facilities. In addition, the service provided by the
-              officers is also very friendly and very polite.
+              Not only does MORENT offer competitive prices, but it also boasts
+              an extensive selection of vehicles equipped with impressive and
+              convenient amenities. Moreover, the customer service delivered by
+              their team is remarkably warm and courteous, making the entire
+              experience even more enjoyable.
             </p>
           </div>
         </div>
