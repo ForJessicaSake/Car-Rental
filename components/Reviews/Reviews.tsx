@@ -39,11 +39,11 @@ const Reviews = () => {
       </div>
       <div className="flex justify-between pt-10">
         <div className="space-x-3 flex">
-          <div className="md:h-32 md:w-32 w-80 h-80 rounded-full">
+          <div className="md:h-32 md:w-32 max-w-sm rounded-full">
             <img
               src="/assets/header/woman.jpg"
               alt=""
-              className="cursor-pointer w-fit rounded-full"
+              className="cursor-pointer rounded-full"
             />
           </div>
           <div>
