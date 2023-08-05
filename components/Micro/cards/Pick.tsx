@@ -43,7 +43,6 @@ const Pick = ({ one, two, three, heading }: Props) => {
           <h4 className="px-1 font-semibold sm:text-lg">{three}</h4>
           <select className="text-text text-xs sm:text-sm">
             <option>Select time</option>
-            <option>Benin</option>
             <option>9am</option>
             <option>12pm</option>
             <option>3pm</option>
