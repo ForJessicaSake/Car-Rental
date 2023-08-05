@@ -13,6 +13,9 @@ module.exports = {
         text: "#90A3BF",
         input: "#F6F7F9",
       },
+      fontFamily: {
+        font: ["Quicksand", "sans-serif"],
+      },
     },
   },
   plugins: [],

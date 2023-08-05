@@ -15,7 +15,7 @@ const Details = ({ item }: any) => {
             <section className="lg:w-7/12">
               <div className="w-full bg-cover bg-[url('/assets/header/ads2.svg')] h-min rounded-lg">
                 <div className="p-5 w-full">
-                  <h1 className="sm:text-3xl md:text-4xl xl:text-3xl text-xl lg:max-w-sm  font-medium text-white">
+                  <h1 className="sm:text-3xl md:text-3xl xl:text-3xl text-xl lg:max-w-sm  font-medium text-white">
                     Get cars with the best design and acceleration
                   </h1>
                   <p className="text-white max-w-sm text-sm sm:text-lg lg:text-base py-3">

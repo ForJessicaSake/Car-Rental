@@ -24,7 +24,7 @@ const Index = () => {
 
   console.log(id);
   return (
-    <div className="bg-[#F6F7F9]">
+    <div className="bg-[#F6F7F9]" id="billings">
       <Payment item={item} />
     </div>
   );

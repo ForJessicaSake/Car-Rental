@@ -5,14 +5,14 @@ import Pick from "../Micro/cards/Pick";
 
 const Header = () => {
   return (
-    <header className="mx-auto container lg:pt-8 px-5 lg:px-10">
+    <header className="mx-auto container lg:pt-8 px-5  lg:px-10" id="pickup">
       <div className="flex justify-between space-x-5 ">
         <div className=" lg:w-[640px] w-full bg-cover bg-[url('/assets/header/ads.svg')] h-min rounded-lg">
           <div className="p-5 w-full">
-            <h1 className="sm:text-3xl text-xl lg:max-w-[250px] font-medium text-white">
+            <h1 className="sm:text-3xl text-xl lg:max-w-[320px] font-medium text-white">
               The Best Platform for Car Rental
             </h1>
-            <p className="text-white max-w-[270px] text-sm sm:text-base py-3">
+            <p className="text-white max-w-[300px] text-sm sm:text-base py-3">
               Ease of doing a car rental safely and reliably. Of course at a low
               price.
             </p>
@@ -30,10 +30,10 @@ const Header = () => {
         </div>
         <div className="relative lg:h-[360px] w-[640px] lg:block hidden bg-[url('/assets/header/ads2.svg')] rounded-lg bg-primary">
           <div className="absolute top-0 p-5 w-full">
-            <h1 className="text-3xl max-w-[250px] font-medium text-white">
+            <h1 className="text-3xl max-w-[320px] font-medium text-white">
               Easy way to rent a car at a low price{" "}
             </h1>
-            <p className="text-white max-w-[280px] py-3">
+            <p className="text-white max-w-[300px] py-3">
               Providing cheap car rental services and safe and comfortable
               facilities.
             </p>

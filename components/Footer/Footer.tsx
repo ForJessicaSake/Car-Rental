@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className=" mx-auto container px-5 pb-4 lg:px-10 py-10">
+    <footer id="footer" className=" mx-auto container px-5 pb-4 lg:px-10 py-10">
       <div className="flex lg:flex-row flex-col justify-between ">
         <section className="lg:max-w-[250px] max-w-[280px] space-y-2">
           <h2 className="text-primary text-2xl font-bold">MORENT</h2>

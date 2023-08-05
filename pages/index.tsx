@@ -5,7 +5,7 @@ import React from "react";
 
 export default function Home() {
   return (
-    <main className="bg-[#F6F7F9]">
+    <main className="bg-[#F6F7F9] mt-8 lg:mt-0">
       <Header />
       <Popular />
       <Recommendation/>

@@ -259,8 +259,8 @@ const Payment = ({ item }: any) => {
               <Image
                 src="/assets/details/paystack.png"
                 alt="paystack logo"
-                width={40}
-                height={40}
+                width={50}
+                height={50}
                 className="rounded-full"
               />
             </div>

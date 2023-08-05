@@ -7,7 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <main className="font-sans">
+    <main className="font-font">
       <Navbar />
       <Component {...pageProps} />
       <Footer />

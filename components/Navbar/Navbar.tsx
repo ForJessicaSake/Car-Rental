@@ -1,31 +1,77 @@
-import React from "react";
 import Image from "next/image";
-import { MdOutlineFavoriteBorder } from "react-icons/md";
-import { IoMdNotificationsOff, IoMdSettings } from "react-icons/io";
-import { BsSearch } from "react-icons/bs";
 import Link from "next/link";
+import React from "react";
+import { CiMenuBurger } from "react-icons/ci";
+import { TfiClose } from "react-icons/tfi";
 import Button from "../Micro/button/Button";
 
 const Navbar = () => {
-  const inputRef = React.useRef<HTMLInputElement | null>(null);
-  const [inputValue, setInputValue] = React.useState("");
-  const handleInputChange = () => {
-    setInputValue(inputRef.current?.value || "");
-  };
-
+  const [nav, setNav] = React.useState(false);
   return (
-    <nav className=" w-full mx-auto container px-5 lg:px-10 py-5">
-      <div className="flex justify-between items-center">
-        <Link href="/">
-          <h2 className="text-primary text-2xl font-bold">MORENT</h2>
-        </Link>
+    <nav className="mx-auto container sm:p-5 p-3 z-50">
+      {/*desktop*/}
+      <div className="justify-between items-center hidden lg:flex">
+        <div className="flex items-center w-6/12 justify-between">
+          <Link href="/" className="flex items-center">
+            <span className="pl-1 text-xl text-primary font-bold">MORENT</span>
+          </Link>
+          <ul className="flex items-center justify-between w-9/12 pl-4 text-text cursor-pointer">
+            <li>
+              <a href="/#pickup">Services</a>
+            </li>
+            <li>
+              <a href="/#products">Products</a>
+            </li>
+            <li>
+              <a href="/details/1/#billings">Billings</a>
+            </li>
 
-        <div className="flex space-x-5 items-center cursor-pointer">
-          <div>
-            <Link href="/">
-              <Button className="w-32 bg-black">Log In</Button>
-            </Link>
+            <li>
+              <a href="/#footer">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+        <ul className="flex items-center">
+          <li className="text-text cursor-pointer">
+            <Link href="/">Sign in</Link>
+          </li>
+          <Link href="/">
+            <Button className="mx-5 w-32 bg-primary text-white rounded-lg">
+              Log in
+            </Button>
+          </Link>
+        </ul>
+      </div>
+
+      {/* mobile */}
+      <div className="lg:hidden  flex justify-between items-center">
+        <Link href="/" className="flex items-center">
+          <span className="pl-1 text-xl text-primary font-bold">MORENT</span>
+        </Link>
+        <ul
+          onClick={() => setNav(!nav)}
+          className={`absolute top-20 z-50 bg-primary items-center w-full left-0 py-10 text-white h-full ${
+            nav ? "block" : "hidden"
+          }`}
+        >
+          <div className="flex flex-col text-lg h-96 items-center justify-between">
+            <li>
+              <a href="/#pickup">Services</a>
+            </li>
+            <li>
+              <a href="/#products">Products</a>
+            </li>
+            <li>
+              <a href="/details/1/#billings">Billings</a>
+            </li>
+
+            <li>
+              <a href="/#footer">Contact Us</a>
+            </li>
           </div>
+        </ul>
+        <div className="lg:hidden block text-3xl" onClick={() => setNav(!nav)}>
+          {!nav ? <CiMenuBurger /> : <TfiClose />}
         </div>
       </div>
     </nav>
