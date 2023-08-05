@@ -197,11 +197,11 @@ const Payment = ({ item }: any) => {
             <label className="flex flex-col font-medium ">
               Card Number
               <input
-                placeholder="Your name"
+                placeholder="Your Number"
                 type="number"
                 maxLength={16}
                 required
-                className="my-3 rounded-lg bg-input input select-none p-4 no-default-style"
+                className="my-3 rounded-lg bg-input input select-none p-4"
               />
               <style>
                 {`
