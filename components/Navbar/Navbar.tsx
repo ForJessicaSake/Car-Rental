@@ -13,7 +13,7 @@ const Navbar = () => {
       <div className="justify-between items-center hidden lg:flex">
         <div className="flex items-center w-6/12 justify-between">
           <Link href="/" className="flex items-center">
-            <span className="pl-1 text-xl text-primary font-bold">MORENT</span>
+            <span className="pl-1 text-2xl text-primary font-bold">MORENT</span>
           </Link>
           <ul className="flex items-center justify-between w-9/12 pl-4 text-text cursor-pointer">
             <li>
@@ -44,17 +44,17 @@ const Navbar = () => {
       </div>
 
       {/* mobile */}
-      <div className="lg:hidden  flex justify-between items-center">
+      <div className="lg:hidden pt-3 flex justify-between items-center">
         <Link href="/" className="flex items-center">
-          <span className="pl-1 text-xl text-primary font-bold">MORENT</span>
+          <span className="pl-1 text-2xl text-primary font-bold">MORENT</span>
         </Link>
-        <ul
+        <div
           onClick={() => setNav(!nav)}
           className={`absolute top-20 z-50 bg-primary items-center w-full left-0 py-10 text-white h-full ${
             nav ? "block" : "hidden"
           }`}
         >
-          <div className="flex flex-col text-lg h-96 items-center justify-between">
+          <ul className="flex flex-col text-lg h-96 items-center justify-between">
             <li>
               <a href="/#pickup">Services</a>
             </li>
@@ -68,8 +68,13 @@ const Navbar = () => {
             <li>
               <a href="/#footer">Contact Us</a>
             </li>
-          </div>
-        </ul>
+            <Link href="/">
+            <Button className="mx-5 w-32 bg-black text-white rounded-lg">
+              Log in
+            </Button>
+          </Link>
+          </ul>
+        </div>
         <div className="lg:hidden block text-3xl" onClick={() => setNav(!nav)}>
           {!nav ? <CiMenuBurger /> : <TfiClose />}
         </div>
