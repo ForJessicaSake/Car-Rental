@@ -13,7 +13,7 @@ const Details = ({ item }: any) => {
         <>
           <div className="flex lg:space-x-5 justify-between flex-col lg:flex-row">
             <section className="lg:w-7/12">
-              <div className="w-full bg-cover bg-[url('/assets/header/ads2.svg')] h-min rounded-lg">
+              <div data-aos="fade-in" className="w-full bg-cover bg-[url('/assets/header/ads2.svg')] h-min rounded-lg">
                 <div className="p-5 w-full">
                   <h1 className="sm:text-3xl md:text-3xl xl:text-3xl text-xl lg:max-w-sm  font-medium text-white">
                     Get cars with the best design and acceleration

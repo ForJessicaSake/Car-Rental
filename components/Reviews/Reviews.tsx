@@ -10,7 +10,7 @@ const Reviews = () => {
         <Button className="w-8 bg-primary h-8">2</Button>
       </div>
       <div className="flex justify-between pt-10">
-        <div className="space-x-3 flex">
+        <div className="space-x-3 flex" data-aos="fade-left">
           <div>
             <img
               src="/assets/navbar/avatar.svg"
@@ -37,7 +37,7 @@ const Reviews = () => {
           </div>
         </div>
       </div>
-      <div className="flex justify-between pt-10">
+      <div className="flex justify-between pt-10" data-aos="fade-right">
         <div className="space-x-3 flex">
           <div className="md:h-32 md:w-32 max-w-sm rounded-full">
             <img

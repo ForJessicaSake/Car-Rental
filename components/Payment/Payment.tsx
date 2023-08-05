@@ -244,7 +244,7 @@ const Payment = ({ item }: any) => {
 
           <div className="grid gap-x-7 gap-y-5 py-7">
             <div className="bg-input py-4 px-4 rounded-xl flex justify-between">
-              <label className="flex items-center font-medium  ">
+              <label className="flex items-center font-medium text-lg  ">
                 <input
                   type="checkbox"
                   onChange={(e) => {
@@ -252,7 +252,7 @@ const Payment = ({ item }: any) => {
                       ? initializePayment(onSuccess, onClose)
                       : null;
                   }}
-                  className="my-3 rounded-lg bg-input w-5 h-5 mr-3"
+                  className="my-3 rounded-lg bg-input w-7 h-7 mr-3"
                 />
                 Paystack
               </label>
@@ -278,19 +278,19 @@ const Payment = ({ item }: any) => {
             <p className="text-text">Step 4 of 4</p>
           </div>
           <div className="grid gap-x-7 gap-y-5 py-7">
-            <label className="flex items-center font-medium bg-input py-2 px-4 rounded-xl">
+            <label className="flex items-center font-medium sm:text-base text-sm bg-input py-2 px-4 rounded-xl">
               <input
                 type="checkbox"
                 required
-                className="my-3 rounded-lg bg-input lg:w-5 lg:h-5 w-8 h-8 mr-3"
+                className="my-3 rounded-lg bg-input lg:w-5 lg:h-5 w-10 h-10 mr-3"
               />
               I agree with receiving newsletter emails. No spam, promised!
             </label>
-            <label className="flex items-center font-medium bg-input py-2 px-4 rounded-xl">
+            <label className="flex items-center font-medium sm:text-base text-sm bg-input py-2 px-4 rounded-xl">
               <input
                 type="checkbox"
                 required
-                className="my-3 rounded-lg bg-input lg:w-5 lg:h-5 w-8 h-8 mr-3"
+                className="my-3 rounded-lg bg-input lg:w-5 lg:h-5 w-10 h-10 mr-3"
               />
               I agree with our terms, conditions and privacy policy.
             </label>

@@ -25,7 +25,7 @@ const Item = () => {
     <>
       {cars &&
         cars.map((car: { [key: string]: string }) => (
-          <div className="rounded-lg p-4 bg-white " key={car.id}>
+          <div className="rounded-lg p-4 bg-white " key={car.id}  data-aos="fade-in">
             <div>
               <div className="flex justify-between">
                 <hgroup>

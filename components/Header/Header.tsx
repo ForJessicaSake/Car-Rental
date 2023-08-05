@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <header className="mx-auto container lg:pt-8 px-5  lg:px-10" id="pickup">
       <div className="flex justify-between space-x-5 ">
-        <div className=" lg:w-[640px] w-full bg-cover bg-[url('/assets/header/ads.svg')] h-min rounded-lg">
+        <div  data-aos="fade-right" className="lg:w-[640px] w-full bg-cover bg-[url('/assets/header/ads.svg')] h-min rounded-lg">
           <div className="p-5 w-full">
             <h1 className="sm:text-3xl text-xl lg:max-w-[320px] font-medium text-white">
               The Best Platform for Car Rental
@@ -31,7 +31,7 @@ const Header = () => {
             </div>
           </div>
         </div>
-        <div className="relative lg:h-[360px] w-[640px] lg:block hidden bg-[url('/assets/header/ads2.svg')] rounded-lg bg-primary">
+        <div  data-aos="fade-left" className="relative lg:h-[360px] w-[640px] lg:block hidden bg-[url('/assets/header/ads2.svg')] rounded-lg bg-primary">
           <div className="absolute top-0 p-5 w-full">
             <h1 className="text-3xl max-w-[320px] font-medium text-white">
               Easy way to rent a car at a low price{" "}
