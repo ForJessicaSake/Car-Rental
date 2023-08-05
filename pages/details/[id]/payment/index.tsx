@@ -22,7 +22,6 @@ const Index = () => {
     fetchCarDetails();
   }, [id]);
 
-  console.log(id);
   return (
     <div className="bg-[#F6F7F9] mt-6 lg:mt-0" id="billings">
       <Payment item={item} />

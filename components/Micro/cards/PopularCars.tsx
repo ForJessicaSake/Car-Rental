@@ -16,7 +16,6 @@ const PopularCars = () => {
         console.log(error);
       }
       setPopularCars(data);
-      console.log(data);
     };
     fetchCars();
   }, []);
