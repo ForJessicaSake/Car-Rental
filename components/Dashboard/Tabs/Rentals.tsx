@@ -6,13 +6,13 @@ const Rentals = () => {
   return (
     <main className="flex mx-5 lg:flex-row flex-col justify-between lg:space-x-5">
       <div className="bg-white rounded-xl p-5 lg:w-6/12">
-        <h3 className="text-xl font-bold pb-2">Rental Details</h3>
+        <h3 className="text-xl font-bold pb-1">Rental Details</h3>
         <img
           src="/assets/header/Maps.svg"
           alt=""
           className="w-full h-fit lg:w-[486px] lg:h-[272px]"
         />
-        <nav className="flex justify-between py-7 text-text font-medium">
+        <nav className="flex justify-between py-3 text-text font-medium">
           <h3>Recommended Cars</h3>
           <p className="text-primary">View All</p>
         </nav>
@@ -28,7 +28,7 @@ const Rentals = () => {
           height={272}
         />
 
-        <div className="bg-white rounded-xl p-5 my-10 w-full ">
+        <div className="bg-white rounded-xl p-5 my-7 w-full ">
           <nav className="flex justify-between text-text font-medium">
             <h3> Recent Transaction</h3>
             <p className="text-primary">View All</p>
