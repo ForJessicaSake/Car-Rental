@@ -32,14 +32,8 @@ const Navbar = () => {
           </ul>
         </div>
         <ul className="flex items-center">
-          {/* 
-          <Link href="/">
-            <Button className="mx-5 w-32 bg-primary text-white rounded-lg">
-              Log in
-            </Button>
-          </Link> */}
           <li className="text-text cursor-pointer">
-            <Link href="/">Sign in</Link>
+            <Link href="/login">Log in</Link>
           </li>
 
           <Link href="/dashboard">

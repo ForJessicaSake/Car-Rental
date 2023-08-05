@@ -38,7 +38,7 @@ const Payment = ({ item }: any) => {
     }, 1000);
   };
   return (
-    <main className="mx-auto container py-7 px-5 lg:px-10 flex lg:flex-row flex-col-reverse justify-between lg:space-x-5">
+    <main className="mx-auto container py-7 px-5 flex lg:flex-row flex-col-reverse justify-between lg:space-x-5">
       <form className="lg:w-7/12" onSubmit={handleSubmit}>
         <div className=" bg-white rounded-xl p-5 lg:my-0 my-7">
           <div className="flex justify-between">
