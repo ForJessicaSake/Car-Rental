@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import Button from "../Micro/button/Button";
 import Pick from "../Micro/cards/Pick";
+import Link from "next/link";
 
 const Header = () => {
   return (
@@ -16,7 +17,9 @@ const Header = () => {
               Ease of doing a car rental safely and reliably. Of course at a low
               price.
             </p>
-            <Button className="bg-primary">Rental Car</Button>
+            <Link href="/#products">
+              <Button className="bg-primary">Rental Car</Button>
+            </Link>
             <div className="flex justify-center py-2 items-center w-full">
               <Image
                 src="/assets/header/car1.svg"
@@ -37,7 +40,9 @@ const Header = () => {
               Providing cheap car rental services and safe and comfortable
               facilities.
             </p>
-            <Button className="bg-[#54A6FF]">Rental Car</Button>
+            <Link href="/#products">
+              <Button className="bg-[#54A6FF]">Rental Car</Button>
+            </Link>
             <div className="flex justify-center items-center py-2 w-full">
               <Image
                 src="/assets/header/car2.svg"
@@ -53,14 +58,14 @@ const Header = () => {
       <section className=" relative flex xl:flex-row flex-col justify-between w-full">
         <Pick one="Locations" two="Date" three="Time" heading="Pick-Up" />
         <div className="absolute top-32 xl:top-16 flex justify-center items-center w-full">
-        <Image
-                src="/assets/header/Switch.svg"
-                alt="ads"
-                width={110}
-                height={110}
-                className="rounded-md"
-              />
-              </div>
+          <Image
+            src="/assets/header/Switch.svg"
+            alt="ads"
+            width={110}
+            height={110}
+            className="rounded-md"
+          />
+        </div>
         <Pick one="Locations" two="Date" three="Time" heading="Drop-Off" />
       </section>
     </header>
