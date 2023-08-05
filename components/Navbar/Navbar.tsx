@@ -65,20 +65,18 @@ const Navbar = () => {
             <li>
               <Link href="/details/1/#billings">Billings</Link>
             </li>
+            
+            <li>
+              <Link href="/#footer">Dashboard</Link>
+            </li>
 
             <li>
               <Link href="/#footer">Contact Us</Link>
             </li>
+
             <Link href="/login">
-              <Button className="mx-5 w-32 bg-black text-white rounded-lg">
+              <Button className="mx-5 w-32 h-12 bg-black text-white rounded-lg">
                 Log in
-              </Button>
-            </Link>
-
-
-            <Link href="/dashboard">
-              <Button className="mx-5 w-40 bg-secondary text-white rounded-lg">
-                Go to Dashboard
               </Button>
             </Link>
           </ul>

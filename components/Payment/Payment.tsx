@@ -5,6 +5,7 @@ import Button from "../Micro/button/Button";
 import Image from "next/image";
 import { toast } from "react-toastify";
 import { usePaystackPayment } from "react-paystack";
+import { useRouter } from "next/router";
 
 type PaystackProps = {
   reference: string;
@@ -14,6 +15,7 @@ type PaystackProps = {
 };
 
 const Payment = ({ item }: any) => {
+  const router = useRouter();
   const config: PaystackProps = {
     reference: new Date().getTime().toString(),
     email: "Morent@gmail.com",
@@ -24,6 +26,9 @@ const Payment = ({ item }: any) => {
   const initializePayment = usePaystackPayment(config);
   const onSuccess = () => {
     toast.error("Your rental has been successfully booked 🎉");
+    setTimeout(() => {
+      router.push("/");
+    }, 1000);
   };
 
   const onClose = () => {
@@ -33,9 +38,10 @@ const Payment = ({ item }: any) => {
   const tax = 5;
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    toast.success("Your rental has been successfully booked 🎉");
     setTimeout(() => {
-      toast.success("Your rental has been successfully booked 🎉");
-    }, 1000);
+      router.push("/");
+    }, 1500);
   };
   return (
     <main className="mx-auto container py-7 px-5 flex lg:flex-row flex-col-reverse justify-between lg:space-x-5">
