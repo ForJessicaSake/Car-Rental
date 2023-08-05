@@ -69,15 +69,12 @@ const Navbar = () => {
             <li>
               <Link href="/#footer">Contact Us</Link>
             </li>
-            <Link href="/">
+            <Link href="/login">
               <Button className="mx-5 w-32 bg-black text-white rounded-lg">
                 Log in
               </Button>
             </Link>
 
-            <Link href="/">
-              <li className="text-text cursor-pointer">Sign in </li>
-            </Link>
 
             <Link href="/dashboard">
               <Button className="mx-5 w-40 bg-primary text-white rounded-lg">
