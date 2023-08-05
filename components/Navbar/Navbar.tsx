@@ -23,7 +23,7 @@ const Navbar = () => {
               <a href="/#products">Products</a>
             </li>
             <li>
-              <a href="/details/1/#billings">Billings</a>
+              <Link href="/details/1/#billings">Billings</Link>
             </li>
 
             <li>
