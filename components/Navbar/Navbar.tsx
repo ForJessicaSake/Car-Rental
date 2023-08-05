@@ -17,17 +17,17 @@ const Navbar = () => {
           </Link>
           <ul className="flex items-center justify-between w-9/12 pl-4 text-text cursor-pointer">
             <li>
-              <a href="/#pickup">Services</a>
+              <Link href="/#pickup">Services</Link>
             </li>
             <li>
-              <a href="/#products">Products</a>
+              <Link href="/#products">Products</Link>
             </li>
             <li>
               <Link href="/details/1/#billings">Billings</Link>
             </li>
 
             <li>
-              <a href="/#footer">Contact Us</a>
+              <Link href="/#footer">Contact Us</Link>
             </li>
           </ul>
         </div>
@@ -56,17 +56,17 @@ const Navbar = () => {
         >
           <ul className="flex flex-col text-lg h-96 items-center justify-between">
             <li>
-              <a href="/#pickup">Services</a>
+              <Link href="/#pickup">Services</Link>
             </li>
             <li>
-              <a href="/#products">Products</a>
+              <Link href="/#products">Products</Link>
             </li>
             <li>
               <Link href="/details/1/#billings">Billings</Link>
             </li>
 
             <li>
-              <a href="/#footer">Contact Us</a>
+              <Link href="/#footer">Contact Us</Link>
             </li>
             <Link href="/">
             <Button className="mx-5 w-32 bg-black text-white rounded-lg">
