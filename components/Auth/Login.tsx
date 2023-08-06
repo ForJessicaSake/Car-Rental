@@ -32,7 +32,7 @@ const Login = () => {
         router.push("/dashboard");
       }
     });
-  }, [event]);
+  }, []);
 
   return (
     <main className="lg:px-10 px-5 overflow-y-hidden md:space-x-10 w-full h-full container mx-auto py-10 flex justify-between">
