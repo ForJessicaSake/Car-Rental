@@ -10,6 +10,8 @@ import { TfiClose } from "react-icons/tfi";
 import { BsPersonCheckFill } from "react-icons/bs";
 import Link from "next/link";
 import { toast } from "react-toastify";
+import Supabase from "@/components/Supabase/Supabase";
+import { deleteCookie, getCookie, setCookie } from "cookies-next";
 
 export type TabsTypes = {
   title: React.ReactNode;
@@ -42,7 +44,6 @@ const tabs: TabsTypes[] = [
     ),
     query: "reimburse",
   },
- 
 ];
 
 const TabsComponent: any = {
@@ -54,7 +55,6 @@ const TabsComponent: any = {
 const Tabs = () => {
   const router = useRouter();
   const [tabNavigation, setTabNavigation] = React.useState<boolean>(false);
-
   const handleTabChange = (tab: string) => {
     router.replace(
       { pathname: router.asPath.split("?")[0], query: { tab } },
@@ -79,11 +79,30 @@ const Tabs = () => {
     return <TabComponent />;
   }, [CurrentTab]);
 
-  const handleLogOut = () => {
-    setTimeout(() => {
-      toast.info("Happy Renting!");
+  const [user, setUser] = React.useState<any>("");
+  React.useEffect(() => {
+    const getUserData = async () => {
+      await Supabase.auth.getUser().then((value) => {
+        if (value.data?.user) {
+          setUser(value.data.user?.email);
+        }
+      });
+    };
+    getUserData();
+  }, [user]);
+
+  const handleLogOut = async () => {
+    const { error } = await Supabase?.auth.signOut();
+    if (error) {
+      toast.error("An error ocurred");
+    } else {
+      if (user) {
+        toast.info("Happy Renting!");
+      } else {
+        toast.info("Kindly Login");
+      }
       router.push("/");
-    }, 500);
+    }
   };
 
   return (
@@ -94,7 +113,12 @@ const Tabs = () => {
         </Link>
 
         <p className="md:flex hidden items-center text-3xl xl:text-2xl text-black">
-          <BsPersonCheckFill /> <span className="text-sm ml-3">user email</span>
+          <BsPersonCheckFill />{" "}
+          <span className="text-sm ml-3">
+            {!user
+              ? "Hello, kindly login to see your recent rentals"
+              : user}
+          </span>
         </p>
 
         <div
@@ -138,7 +162,7 @@ const Tabs = () => {
               className="flex items-center  text-lg px-2"
               onClick={handleLogOut}
             >
-              <AiOutlineLogout className="mr-2" /> Logout
+              <AiOutlineLogout className="mr-2" /> {!user ? "Home" : "Log Out"}
             </div>
           </ul>
         </section>

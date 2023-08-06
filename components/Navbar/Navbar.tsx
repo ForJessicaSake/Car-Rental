@@ -76,7 +76,7 @@ const Navbar = () => {
 
             <Link href="/login">
               <Button className="mx-5 w-32 h-12 bg-black text-white rounded-lg">
-                Log in
+                Login
               </Button>
             </Link>
           </ul>

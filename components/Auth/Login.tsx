@@ -2,14 +2,44 @@ import React from "react";
 import Button from "../Micro/button/Button";
 import Image from "next/image";
 import Link from "next/link";
+import Supabase from "../Supabase/Supabase";
+import { Auth } from "@supabase/auth-ui-react";
+import { ThemeSupa } from "@supabase/auth-ui-shared";
+import { useRouter } from "next/router";
+import {toast} from "react-toastify"
+
+const App = () => <Auth supabaseClient={Supabase} />;
+const Container = (props: any) => {
+  const { user } = Auth.useUser();
+  if (user)
+    return (
+      <>
+        <div>Signed in: {user.email}</div>
+        <div onClick={() => props.supabaseClient.auth.signOut()}>Sign out</div>
+      </>
+    );
+  return props.children;
+};
 
 const Login = () => {
+  const router = useRouter();
+  React.useEffect(() => {
+    Supabase.auth.onAuthStateChange(async (event) => {
+      console.log(event);
+      if (event === "SIGNED_OUT") {
+        router.push("/");
+      } else if (event === "SIGNED_IN") {
+        router.push("/dashboard");
+      }
+    });
+  }, [event]);
+
   return (
     <main className="lg:px-10 px-5 overflow-y-hidden md:space-x-10 w-full h-full container mx-auto py-10 flex justify-between">
-      <section className="md:block hidden w-full">
+      <section className="md:block hidden md:w-7/12">
         <div
           data-aos="fade-right"
-          className="lg:w-[740px] w-full bg-cover bg-[url('/assets/header/ads.svg')] h-full rounded-lg"
+          className=" bg-cover bg-[url('/assets/header/ads.svg')] h-full rounded-lg"
         >
           <div className="p-5 w-full">
             <h1 className="sm:text-3xl text-xl lg:max-w-[320px] font-medium text-white">
@@ -35,38 +65,18 @@ const Login = () => {
         </div>
       </section>
 
-      <div className="w-full">
-        <form className=" flex flex-col justify-center">
-          <label className="text-2xl pb-5 font-semibold">Welcome back</label>
-          <div className="flex flex-col justify-center">
-            <input
-              className="border p-4 rounded-lg"
-              placeholder="Enter your email address"
-              required
-              type="email"
-            />
-            <input
-              className="border p-4 my-5 rounded-lg "
-              placeholder="password"
-              required
-              type="Password"
-            />
-          </div>
-          <Link href="/dashboard" className="w-full flex">
-            <Button className="bg-black h-14 w-full text-white rounded-lg">
-              LOGIN
-            </Button>
-          </Link>
-          <p className="flex justify-center items-center font-semibold py-3 text-lg">
-            OR
-          </p>
-
-          <Link href="/dashboard" className="lg:w-full flex">
-            <Button className="bg-text w-full h-14 text-white rounded-lg">
-              SIGN IN WITH GOOGLE
-            </Button>
-          </Link>
-        </form>
+      <div className="md:w-5/12 w-full">
+        <Auth
+          supabaseClient={Supabase}
+          providers={[]}
+          appearance={{
+            theme: ThemeSupa,
+            style: {
+              button: { background: "#3563E9", color: "white", height: "48px" },
+              anchor: { color: "black" },
+            },
+          }}
+        />
       </div>
     </main>
   );

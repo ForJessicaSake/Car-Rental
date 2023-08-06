@@ -11,7 +11,7 @@ type PaystackProps = {
   reference: string;
   email: string;
   amount: number;
-  publicKey: string | any;
+  publicKey: any;
 };
 
 const Payment = ({ item }: any) => {
@@ -32,7 +32,7 @@ const Payment = ({ item }: any) => {
   };
 
   const onClose = () => {
-    toast.error("Your rental has been cancelled, please try again");
+    toast.error("Your rental has been cancelled, please try again later");
   };
 
   const tax = 5;

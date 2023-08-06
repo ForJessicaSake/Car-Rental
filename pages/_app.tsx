@@ -10,7 +10,7 @@ import "aos/dist/aos.css";
 import { useRouter } from "next/router";
 
 export default function App({ Component, pageProps }: AppProps) {
-  React.useLayoutEffect(() => {
+  React.useEffect(() => {
     AOS.init({ duration: 1900, once: true });
     AOS.refresh();
   });
