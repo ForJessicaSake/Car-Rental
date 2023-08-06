@@ -1,11 +1,8 @@
 import React from "react";
 import Button from "../button/Button";
-import Image from "next/image";
 import { BsFuelPumpDieselFill, BsFillPeopleFill } from "react-icons/bs";
 import { GiSteeringWheel } from "react-icons/gi";
-import { GrFavorite } from "react-icons/gr";
 import Supabase from "@/components/Supabase/Supabase";
-import { toast } from "react-toastify";
 import Link from "next/link";
 
 const Item = () => {
@@ -27,16 +24,13 @@ const Item = () => {
         cars.map((car: { [key: string]: string }) => (
         <div className="rounded-lg p-4 bg-white " key={car.id} data-aos="fade-in">
             <div>
-              <div className="flex justify-between">
+              <div>
                 <hgroup>
                   <h3 className="text-base font-bold">{car.name}</h3>
                   <h4 className="font-medium text-lg lg:text-base text-text">
                     {car.type}
                   </h4>
                 </hgroup>
-                <p>
-                  <GrFavorite className="text-lg text-text" />
-                </p>
               </div>
               <img
                 src={car.image}
