@@ -7,7 +7,11 @@ const Dashboard = () => {
     <main className="flex mx-5 lg:flex-row flex-col justify-between lg:space-x-5">
       <div className="bg-white rounded-xl p-5 lg:w-6/12">
         <h3 className="text-xl font-bold pb-2">Transaction Details</h3>
-        <img src="/assets/header/Maps.svg" alt="" className="w-full lg:w-[486px] lg:h-[272px]"/>
+        <img
+          src="/assets/header/Maps.svg"
+          alt=""
+          className="w-full lg:w-[486px] lg:h-[272px]"
+        />
         <nav className="flex justify-between py-3 text-text font-medium">
           <h3>Popular Cars</h3>
           <p className="text-primary">View All</p>
@@ -25,11 +29,11 @@ const Dashboard = () => {
         />
 
         <div className="bg-white rounded-xl p-5 my-7 w-full ">
-        <nav className="flex justify-between text-text font-medium">
-          <h3> Recent Transaction</h3>
-          <p className="text-primary">View All</p>
-        </nav>
-        <p className="py-5">You have no recent transaction!</p>
+          <nav className="flex justify-between text-text font-medium">
+            <h3> Recent Transaction</h3>
+            <p className="text-primary">View All</p>
+          </nav>
+          <p className="py-5">You have no recent transaction!</p>
         </div>
       </div>
     </main>

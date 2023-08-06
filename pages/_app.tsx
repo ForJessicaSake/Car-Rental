@@ -11,7 +11,7 @@ import { useRouter } from "next/router";
 import Head from "next/head";
 
 export default function App({ Component, pageProps }: AppProps) {
-  React.useEffect(() => {
+  React.useLayoutEffect(() => {
     AOS.init({ duration: 1900, once: true });
     AOS.refresh();
   });

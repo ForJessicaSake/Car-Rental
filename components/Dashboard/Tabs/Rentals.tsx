@@ -10,7 +10,7 @@ const Rentals = () => {
         <img
           src="/assets/header/Maps.svg"
           alt=""
-          className="w-full h-fit lg:w-[486px] lg:h-[272px]"
+          className="w-full lg:w-[486px] lg:h-[272px]"
         />
         <nav className="flex justify-between py-3 text-text font-medium">
           <h3>Recommended Cars</h3>
@@ -34,7 +34,6 @@ const Rentals = () => {
             <p className="text-primary">View All</p>
           </nav>
           <p className="py-5">You have no recent rental!</p>
-
         </div>
       </div>
     </main>

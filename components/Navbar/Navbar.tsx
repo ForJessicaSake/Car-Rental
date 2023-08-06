@@ -65,10 +65,6 @@ const Navbar = () => {
             <li>
               <Link href="/details/1/#billings">Billings</Link>
             </li>
-            
-            <li>
-              <Link href="/#footer">Dashboard</Link>
-            </li>
 
             <li>
               <Link href="/#footer">Contact Us</Link>
