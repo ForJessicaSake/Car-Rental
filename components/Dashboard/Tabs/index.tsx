@@ -98,8 +98,6 @@ const Tabs = () => {
     } else {
       if (user) {
         toast.info("Happy Renting!");
-      } else {
-        toast.info("Kindly Login");
       }
       router.push("/");
     }
