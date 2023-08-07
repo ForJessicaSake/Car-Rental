@@ -96,9 +96,6 @@ const Tabs = () => {
     if (error) {
       toast.error("An error ocurred");
     } else {
-      if (user) {
-        toast.info("Happy Renting!");
-      }
       router.push("/");
     }
   };
