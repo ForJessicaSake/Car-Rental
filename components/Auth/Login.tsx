@@ -6,26 +6,11 @@ import Supabase from "../Supabase/Supabase";
 import { Auth } from "@supabase/auth-ui-react";
 import { ThemeSupa } from "@supabase/auth-ui-shared";
 import { useRouter } from "next/router";
-import {toast} from "react-toastify"
-
-const App = () => <Auth supabaseClient={Supabase} />;
-const Container = (props: any) => {
-  const { user } = Auth.useUser();
-  if (user)
-    return (
-      <>
-        <div>Signed in: {user.email}</div>
-        <div onClick={() => props.supabaseClient.auth.signOut()}>Sign out</div>
-      </>
-    );
-  return props.children;
-};
 
 const Login = () => {
   const router = useRouter();
   React.useEffect(() => {
     Supabase.auth.onAuthStateChange(async (event) => {
-      console.log(event);
       if (event === "SIGNED_OUT") {
         router.push("/");
       } else if (event === "SIGNED_IN") {
