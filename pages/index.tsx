@@ -36,7 +36,7 @@ export default function Home() {
           property="twitter:url"
           content="https://car-rental.brimble.app/"
         />
-        <meta name="twitter:title" content="GoalTracker" />
+        <meta name="twitter:title" content="Morent" />
         <meta
           name="twitter:description"
           content="The Best Platform for Car Rental"
