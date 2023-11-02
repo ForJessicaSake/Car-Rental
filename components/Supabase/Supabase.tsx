@@ -10,4 +10,4 @@ if (!supabaseUrl || !supabaseKey) {
 }
 
 const Supabase = createClient(supabaseUrl, supabaseKey);
-export default Supabase
+export default Supabase;

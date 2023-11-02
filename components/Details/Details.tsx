@@ -5,15 +5,38 @@ import Item from "../Micro/cards/Item";
 import PopularCars from "../Micro/cards/PopularCars";
 import Reviews from "../Reviews/Reviews";
 import Link from "next/link";
+import { TailSpin } from "react-loader-spinner";
 
-const Details = ({ item }: any) => {
+interface MyComponentProps {
+  item: any;
+  loading: boolean;
+}
+
+const Details: React.FC<MyComponentProps> = ({ item, loading }) => {
   return (
     <main className="px-5 lg:px-10 py-7 mx-auto container">
+      {loading && (
+        <div className="h-[80vh] min-h-[80vh] flex items-center justify-center">
+          <TailSpin
+            height="80"
+            width="80"
+            color="#3563E9"
+            ariaLabel="tail-spin-loading"
+            radius="1"
+            wrapperStyle={{}}
+            wrapperClass=""
+            visible={true}
+          />
+        </div>
+      )}
       {item && (
         <>
           <div className="flex lg:space-x-5 justify-between flex-col lg:flex-row">
             <section className="lg:w-7/12">
-              <div data-aos="fade-in" className="w-full bg-cover bg-[url('/assets/header/ads2.svg')] h-min rounded-lg">
+              <div
+                data-aos="fade-in"
+                className="w-full bg-cover bg-[url('/assets/header/ads2.svg')] h-min rounded-lg"
+              >
                 <div className="p-5 w-full">
                   <h1 className="sm:text-3xl md:text-3xl xl:text-3xl text-xl lg:max-w-sm  font-medium text-white">
                     Get cars with the best design and acceleration
@@ -99,7 +122,10 @@ const Details = ({ item }: any) => {
                   ${item?.price}.00/
                   <span className="font-medium text-lg text-text">day</span>
                 </p>
-                <Link href={`/details/${item?.id}/payment`} className="my-5 sm:my-0">
+                <Link
+                  href={`/details/${item?.id}/payment`}
+                  className="my-5 sm:my-0"
+                >
                   <Button className="animate-bounce bg-primary rounded-md w-36">
                     Pay Now
                   </Button>
@@ -107,7 +133,7 @@ const Details = ({ item }: any) => {
               </div>
             </section>
           </div>
-          
+
           <section className="">
             <Reviews />
           </section>
